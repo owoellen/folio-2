@@ -1,0 +1,220 @@
+<!-- 
+                                     _     _              _       __ _   
+                                    (_)   | |         _  | |     / _| |  
+ _ __ ___   ___  _ __   _____      ___  __| | ___   _| |_| | ___| |_| |_ 
+| '_ ` _ \ / _ \| '_ \ / _ \ \ /\ / / |/ _` |/ _ \ |_   _| |/ _ \  _| __|
+| | | | | | (_) | | | | (_) \ V  V /| | (_| |  __/   |_| | |  __/ | | |_ 
+|_| |_| |_|\___/|_| |_|\___/ \_/\_/ |_|\__,_|\___|       |_|\___|_|  \__|
+
+code written by NOLNIR 2025
+v 1.0.0
+last updated: 25.5.15
+=================
+- you're free to use this template as you please
+- credit box is not necessary to keep
+- you can delete this comment section if you'd like
+- if you have any questions, email me at mailbox.nolnir.com -or- contact me via bsky @ nolnir.com 
+=================
+-->
+<!DOCTYPE html>
+	<html>
+	<title>What Am I?, And Other Questions (Mostly) Answered!</title>
+	<style>
+        * {
+	   box-sizing: border-box;
+	   font-family: 'JetBrains Mono', monospace;
+		}
+
+        @font-face {
+            font-family: 'Syncopate Regular'; /*a name to be used later*/
+            src: url('/syncopate.regular.ttf'); /*URL to font*/
+        }
+
+        @font-face {
+            font-family: 'sharppc3k';
+            src: url('/sharppc3k.woff');
+        }
+		
+        body {
+        background-color: #F6F1EE;
+        margin: 0 auto;              /* bring the layout to the top and bottom edges */
+        overflow-y: hidden;          /* and then center it */
+        }
+        
+        h1,h2,h3,h4,h5 {
+        text-transform: lowercase;
+        font-weight: 800;
+        padding: 0;
+        }
+        
+        a {
+        color: inherit;
+        text-decoration: none;
+        	&:hover {
+            color: #ff7d7d;           /* change the color when hovered over */
+            }
+        }
+        
+        div {                         /* all containers have this style scrollbar */
+        scrollbar-color: #aaa transparent;
+        scrollbar-width: thin;
+        }
+        
+    	.wrapper {                    /* the wrapper for the entire layout */
+        background-color: transparent;
+        width: 100%;				  /* the actual width of this container*/
+		min-width: 1100px;			  /* container's minimum size, otherwise it can increase with the window size*/ 
+        height: 100vh;                /* 100vh is the entire viewport height */
+        margin: 0 auto;
+        padding: 0;
+        overflow-y: hidden;           /* disable scrolling, cut off layout at the */
+        }                             /* bottom for a neat look */
+        
+        .header {
+        background-color: #4D3628;
+        color: #F6F1EE;
+        width: 100%;                  /* 100% of the wrapper’ */
+        height: 100px;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: center;
+            h1 {
+                font-family: 'sharppc3k';
+            }
+        }
+        
+        .leftBar {                   /* navigation section */
+        background-color: #4D3628;
+        color: #F6F1EE;
+        height: 100vh;               /* 100vh is the entire viewport height */
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+        overflow-y: scroll;          /* disable scrolling */
+        	li,ul,ol {
+            list-style: "→ ";        /* change list bullet points to this */
+            }
+          h1,h2,h3,h4,h5 {           /* headings look different in .leftBar */
+            text-align: left;
+            font-family: 'sharppc3k';
+            border-bottom: 1px dashed #fff;    /* underline divider for style */
+            }
+        }
+
+        .content {
+        background-color: #fff;
+        color: #4D3628;
+        height: 75vh;
+        width: 80vw;
+        padding: 1rem 10rem;                /* create a gutter on all sides */
+        text-align: left;
+        overflow-y: scroll;          /* make only the content section scrollable */
+        }
+        
+        .footer {
+        background-color: #fff;
+        border-top: 1px dashed #888; /* border to separate disclaimer from page text */
+        color: #888;
+        font-size: 0.9rem;             /* smaller font compared to page text */
+        margin: 0 auto;              /* space between top and bottom of container */
+        padding: 1rem;
+        text-align: right;
+        width: 80%;
+        }
+        
+        .row {
+        display: inline-block;       /* position containers side-by-side */
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        }
+        
+        .leftColumn {
+        width: 20vw;                  /* only 30% of the entire wrapper’s width */
+        max-width: 20%;
+        float: left;
+        margin: 0;                   /* no margins so it’s flushed against the other */
+        padding: 0;                  /* column and the edges of the wrapper */
+        }
+        
+        .rightColumn {
+        width: 80%;                  /* only 70% of the entire wrapper’s width */
+        float: left;
+        margin: 0;                   /* no margins so it’s flushed against the other */
+        }                            /* column and the edges of the wrapper */
+
+        
+		.navigation {				 /* navigation row */
+        background-color: #F6F1EE;
+        color: #000;
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        text-align: center;
+    	}
+
+	</style>
+    <script>
+
+        function getAge() {
+            var dob = new Date("2008-07-09");
+            var month_diff = Date.now() - dob.getTime();
+            var age_dt = new Date(month_diff);
+            var year = age_dt.getUTCFullYear();
+            var age = Math.abs(year - 1970);
+            document.getElementById("dingus").innerHTML = age;
+        }
+
+    </script>
+	<body class="wrapper">
+        	<div class="row">
+              <div class="leftColumn">
+                  <div class="leftBar">
+                  <h4>home</h4>
+                      <li><a href="/home">landing</a></li>
+                  <h4>about me</h4>
+                      <li><a href="/bio">bio</a></li>
+                      <li>studies</li>
+                      <li>hobbies</li>
+					  <li>additional info</li>
+                  <h4>my work</h4>
+                      <li>game dev</li>
+                      <li>photography</li>
+                      <li>other programming projects</li>
+					  <li>art</li>
+				  <h4>other places you may find me</h4>
+                      <li>bsky</li>
+                      <li>github</li>
+                      <li>tiktok</li>
+					  <li>youtube</li>
+					  <li>furaffinity (somewhat inactive)</li>
+					  <li>tumblr (see FA)</li>
+					  <li>steam</li>
+                      <li>pronouns.page</li>
+                      <li>etc.</li>
+                  </div>
+              </div>
+              <div class="rightColumn">
+                  <div class="header">
+            		<h1>ellen's corner</h1>
+            	  </div>
+                  <div class="content">
+                        <h1>who, or what are you, anyway?!?!</h1>
+                        <p>
+                            <br>i'm ellen, but you probably know that already! (unless you never read the <abbr title="go read it!!!!!" style="text-decoration-thickness: 0.75pt;"><a href="/home">landing page</a></abbr>. go do that. yeah, you too, i see you.)
+                            <br><br>as of you reading this, i am currently <span id="dingus">XX</span> years old! as of me <i>writing this</i>, i am still in school, so if i'm not too active online don't be surprised :P
+                            <br><br>i live in the far off mystical land of scotland, home to me and at least two other people i think. i've lived here all my life, and frankly i don't plan on leaving. where in scotland you ask?
+                        </p>
+                        <h1>what do you do with your limited time on this mortal plane?</h1>
+                        <p>
+                            most of my time is spent listening to music! i love having something blasting my eardrums halfway to fr*nce while i go about my day :3
+                            <br><br>i tend to listen to a lot of either hardcore (blame machine girl) or alt rock, with a sprinkling of microgenres like shoegaze and things like that. i also listen to music that is so out of that range you'd think i had lost it, like sabrina carpenter!
+                        </p>
+                        <script>getAge()</script>
+                  <div class="footer">
+                      <p>template by <a href="https://nolnir.com">NOLNIR</a> with minor adjustments by yours truly. general vibe inspired by <a href="https://msx.horse">msx.horse</a>. <3</p>
+                      </div>
+              </div>
+        	</div>
+</body>
+</html>
